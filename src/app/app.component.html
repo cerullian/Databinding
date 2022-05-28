@@ -1,0 +1,15 @@
+<div class="container">
+  <!-- chama a função à direita quando o evento à esquerda acontecer -->
+  <app-cockpit
+  (serverCreated) = "onServerAdded($event)" 
+  (bpCreated) = "onBluePrintCreated($event)"
+  ></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- vai repetir todo o html para este loop -->
+      <!-- vai atribuir o valor de serverElement na variável element em cada loop -->
+      <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement"></app-server-element>
+    </div>
+  </div>
+</div>
